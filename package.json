@@ -1,12 +1,12 @@
 {
-  "name": "discord-bot",
+  "name": "EssayHelper",
   "version": "1.0.0",
-  "description": "Discord bot for SitePoint",
+  "description": "Discord bot for finding synonyms and definitions",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Michiel Mulders",
+  "author": "Omkar Yadav",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.0",

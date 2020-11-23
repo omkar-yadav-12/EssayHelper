@@ -15,7 +15,7 @@ const params = {
 
 
 get_def = async (word) => {
-  let data = await fetch(url + word, params);
+  const data = await fetch(url + word, params);
   return await data.json();
 }
 
@@ -35,11 +35,11 @@ bot.on('message', async msg => {
     const data = await get_def(msg.content.substring(3).trim());
     let message = "";
     if (data[0] === undefined) {
+      message += `Pronounciation: ${data.pronunciation}\nWord: ${data.word}\n\n`;
       for (let i = 0; i < data.definitions.length; i++) {
         message += `type: ${data.definitions[i].type}\ndefinition: ${data.definitions[i].definition}\nexample: ${data.definitions[i].example}\n\n`;
       }
-    }
-    else message = data[0].message;
+    } else message = data[0].message;
     msg.channel.send(message);
   }
 });
