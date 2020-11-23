@@ -1,7 +1,7 @@
 require('dotenv').config();
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const TOKEN = "NzgwMTgxNDgwMTg5NzIyNjM1.X7rWnw.cF9xPgfwWO-nsfEgBn0upp0avTw";
+const TOKEN = process.env.DIS_TOKEN;
 const thesaurus = require('thesaurus');
 const word_definition = require('word-definition');
 bot.login(TOKEN);
