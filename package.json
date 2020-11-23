@@ -9,9 +9,14 @@
   "author": "Michiel Mulders",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.0",
+    "define-word": "^1.0.5",
     "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.6",
+    "owlbot-dictionary": "^1.0.1",
+    "owlbot-js": "^2.0.2",
+    "oxford-dictionary": "^1.6.0",
     "thesaurus": "0.0.1",
     "word-definition": "^2.1.6"
   }
