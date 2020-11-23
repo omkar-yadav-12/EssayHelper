@@ -27,8 +27,8 @@ bot.on('ready', () => {
 
 bot.on('message', async msg => {
   if (msg.content.startsWith('synonym')) {
-    let word = msg.content.substring(7);
-    let synonyms = thesaurus.find(word.trim());
+    const word = msg.content.substring(7);
+    const synonyms = thesaurus.find(word.trim());
     if (synonyms.length > 0) msg.channel.send(synonyms);
     else msg.channel.send(`Looks like we don't have any synonyms for ${word} :(`)
   } else if (msg.content.startsWith('def')) {
