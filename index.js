@@ -14,9 +14,9 @@ const params = {
 }
 
 
-async function get_def(word) {
-  let data = await fetch(url + word, params)
-  return await data.json()
+get_def = async (word) => {
+  let data = await fetch(url + word, params);
+  return await data.json();
 }
 
 bot.login(TOKEN);
@@ -37,7 +37,7 @@ bot.on('message', async msg => {
     let message = "";
     if (data[0] === undefined) {
       for (let i = 0; i < data.definitions.length; i++) {
-        message += ` type: ${data.definitions[i].type}\ndefinition: ${data.definitions[i].definition}\nexample: ${data.definitions[i].example}\n\n`;
+        message += `type: ${data.definitions[i].type}\ndefinition: ${data.definitions[i].definition}\nexample: ${data.definitions[i].example}\n\n`;
       }
     }
     else message = data[0].message;
