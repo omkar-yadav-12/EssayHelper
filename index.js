@@ -35,7 +35,7 @@ bot.on('message', async msg => {
     const data = await get_def(msg.content.substring(3).trim());
     let message = "";
     if (data[0] === undefined) {
-      message += `Pronounciation: ${data.pronunciation}\nWord: ${data.word}\n\n`;
+      message += `Pronunciation: ${data.pronunciation}\nWord: ${data.word}\n\n`;
       for (let i = 0; i < data.definitions.length; i++) {
         message += `type: ${data.definitions[i].type}\ndefinition: ${data.definitions[i].definition}\nexample: ${data.definitions[i].example}\n\n`;
       }
