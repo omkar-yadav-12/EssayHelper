@@ -1,5 +1,5 @@
 {
-  "name": "EssayHelper",
+  "name": "essay-helper",
   "version": "1.0.0",
   "description": "Discord bot for finding synonyms and definitions",
   "main": "index.js",
