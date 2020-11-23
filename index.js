@@ -33,7 +33,6 @@ bot.on('message', async msg => {
     else msg.channel.send(`Looks like we don't have any synonyms for ${word} :(`)
   } else if (msg.content.startsWith('def')) {
     const data = await get_def(msg.content.substring(3).trim());
-    console.log(data);
     let message = "";
     if (data[0] === undefined) {
       for (let i = 0; i < data.definitions.length; i++) {
