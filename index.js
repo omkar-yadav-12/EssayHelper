@@ -35,10 +35,9 @@ essay_bot.on('ready', () => {
 essay_bot.on('message', async msg => {
   if (msg.content.startsWith('!synonym')) {
     const word = msg.content.substring(7);
-
     const synonyms = thesaurus.find(word.trim());
     if (synonyms.length > 0) msg.channel.send(synonyms);
-    else msg.channel.send(`Looks like we don't have any synonyms for ${word} :(`)
+    else msg.channel.send(`Looks like we don't have any synonyms for ${word} :(`);
   } else if (msg.content.startsWith('!def')) {
     const data = await get_def(msg.content.substring(3).trim());
     let message = '';
@@ -52,10 +51,9 @@ essay_bot.on('message', async msg => {
   } else if (msg.content.toLowerCase().startsWith('!essay')) {
     let message = '';
     let data = await get_thesaurus(msg.content.substring(6).trim());
-    console.log(data)
     if (data[0].meta === undefined) {
       message = 'Sorry looks like we don\' have that word :(\n';
-      message += "Did you mean: "
+      message += "Did you mean: ";
       if (data.length > 0) {
         for (let i = 0; i < data.length; i++) {
           message += `${data[i]}, `;
@@ -70,10 +68,9 @@ essay_bot.on('message', async msg => {
       for (let i = 0; i < data.length; i++) {
         if (message.length >= 1500) {
           messages.push(message);
-          message = ''
+          message = '';
         }
-        
-        let relevant_data = data[i].def[0].sseq[0][0][1]
+        let relevant_data = data[i].def[0].sseq[0][0][1];
         message += `Definition: ${relevant_data.dt[0][1]}\n`;
         message += `Part of Speech: ${data[i].fl}\n`;
         message += 'Synonyms: ';
@@ -84,7 +81,7 @@ essay_bot.on('message', async msg => {
           }
           message += `${synonyms.substring(0, synonyms.length - 2)}\n`;
         }
-        else message += "None\n"
+        else message += "None\n";
         message += 'Related Words: ';
         if (relevant_data.rel_list !== undefined) {
           let related = '';
@@ -104,7 +101,6 @@ essay_bot.on('message', async msg => {
         }
       }
       else msg.channel.send(message);
-      
     }
 
   }
